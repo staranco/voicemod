@@ -1,11 +1,12 @@
 <template>
-  <div  class="voice position-relative d-flex flex-column align-items-center"
-        :class="{'voice--fav': isFav, 'voice--selected': isSelected}">
-    <div class="voice-fav-icon position-absolute" @click="toggleFav()"></div>
-    <div class="voice-image position-relative" @click="toggleSelected()">
-      <img :src="voiceimage" :alt="voicename" class="position-relative"/>
-    </div>
-    <h6 class="voice-name">{{voicename}}</h6>
+  <div  class="voice" :class="{'voice--fav': isFav, 'voice--selected': isSelected}">
+    <div class="voice-wrapper position-relative d-flex flex-column align-items-center">
+      <div class="voice-fav-icon position-absolute" @click="toggleFav()"></div>
+          <div class="voice-image position-relative" @click="toggleSelected()">
+            <img :src="voiceimage" :alt="voicename" class="position-relative"/>
+          </div>
+          <h6 class="voice-name">{{voicename}}</h6>
+      </div>
   </div>
 </template>
 
@@ -32,6 +33,11 @@ export default {
 <style scoped>
   .voice {
     cursor: pointer;
+
+    & .voice-wrapper {
+      width: max-content;
+      margin: 0 auto;
+    }
 
     /* Voice image */
     & .voice-image {

@@ -69,7 +69,7 @@ export default {
       this.selectedIndex = this.selectedIndex === index ? null : index;
     },
     onFav(index) {
-      const currentVoice = this.voiceslist.filter(voice => voice.id === index)[0];
+      const currentVoice = this.voices.filter(voice => voice.id === index)[0];
       const isFav = currentVoice.isFav && currentVoice.isFav === true;
 
       currentVoice.isFav = !isFav;
